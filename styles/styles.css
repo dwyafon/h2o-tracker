@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background: url("https://source.unsplash.com/kIPG5OyGbWk/1600x900") no-repeat
+    center center/cover;
+}
+
+.counting-bg {
+  background: url("https://source.unsplash.com/UuAs_sR4frs/1600x900") no-repeat
+    center center/cover;
+}
+
+#landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+#counting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  padding: 50px;
+}
+
+#form-wrap {
+  /* padding: 50px; */
+}
+
+.form-group {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+input {
+  width: 80%;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 25px;
+  padding: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: yellowgreen;
+}
+
+Button {
+  cursor: pointer;
+  background: none;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.h2OButton Button {
+  background: none;
+  padding: 20px 40px;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.counting-instructions {
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 80px;
+  opacity: 0.5;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  padding: 50px;
+}
+
+#all-forms-wrap, #amountWrap {
+  border: 1px solid #f5f5f5;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+#avgLitres, #totalHours, #countingAvg {
+color: greenyellow;
+}
+
+#yesBtn, #noBtn,  {
+  margin: 30px;
+}
+
+#trackerAmount {
+  display: block;
+  font-size: 100px;
+  color: greenyellow;
+}
+
+#h2oBtnWrap {
+  margin: 30px;
+}
