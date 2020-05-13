@@ -52,10 +52,6 @@ body {
   padding: 50px;
 }
 
-#form-wrap {
-  /* padding: 50px; */
-}
-
 .form-group {
   margin-top: 20px;
   padding: 20px;
@@ -152,7 +148,7 @@ ul li {
 color: greenyellow;
 }
 
-#yesBtn, #noBtn,  {
+#yesBtn, #noBtn  {
   margin: 30px;
 }
 
