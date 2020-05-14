@@ -1,29 +1,33 @@
-const confirmBtn = document.getElementById("confirmBtn");
-const landingContainer = document.getElementById("landing-container");
-const countingContainer = document.getElementById("counting-container");
-const firstForm = document.getElementById("first-form-wrap");
-const secondForm = document.getElementById("second-form-wrap");
-const thirdForm = document.getElementById("third-form-wrap");
-const firstBtn = document.getElementById("first-submit");
-const h2oAmount = document.getElementById("h2oAmount");
-const h2oHours = document.getElementById("h2oHours");
-const totalHours = document.getElementById("totalHours");
-const avgLitres = document.getElementById("avgLitres");
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const countingAvg = document.getElementById("countingAvg");
-const trackerAmount = document.getElementById("trackerAmount");
-const h2oBtn = document.getElementById("h2oBtn");
-// const amountWrap = document.getElementById("amountWrap");
-// const amount = document.getElementById("amount");
+const confirmBtn = document.getElementById("confirmBtn"),
+  landingContainer = document.getElementById("landing-container"),
+  countingContainer = document.getElementById("counting-container"),
+  firstForm = document.getElementById("first-form-wrap"),
+  secondForm = document.getElementById("second-form-wrap"),
+  thirdForm = document.getElementById("third-form-wrap"),
+  firstBtn = document.getElementById("first-submit"),
+  h2oAmount = document.getElementById("h2oAmount"),
+  h2oHours = document.getElementById("h2oHours"),
+  totalHours = document.getElementById("totalHours"),
+  avgLitres = document.getElementById("avgLitres"),
+  yesBtn = document.getElementById("yesBtn"),
+  noBtn = document.getElementById("noBtn"),
+  countingAvg = document.getElementById("countingAvg"),
+  trackerAmount = document.getElementById("trackerAmount"),
+  h2oBtn = document.getElementById("h2oBtn"),
+  clock = document.getElementById("clock"),
+  hours = document.getElementById("hours"),
+  minutes = document.getElementById("minutes"),
+  seconds = document.getElementById("seconds");
 
-let userAmount;
-let userHours;
-let amountPerHour;
-let amountStr;
-let hoursStr;
-let calculator;
-let calcStr;
+let userAmount,
+  userHours,
+  amountPerHour,
+  amountStr,
+  hoursStr,
+  calculator,
+  calcStr,
+  clearingVar,
+  totalSec = 0;
 
 countingContainer.style.display = "none";
 secondForm.style.display = "none";
@@ -54,9 +58,24 @@ function changeBG() {
   landingContainer.style.display = "none";
   countingContainer.style.display = "block";
   trackH2O();
+  clearingVar = setInterval(clocker, 1000);
 }
 
-//need to add a timer here for the counting container (via createElement)
+function clocker() {
+  ++totalSec;
+  let h = Math.floor(totalSec / 3600);
+  let m = Math.floor((totalSec - h * 3600) / 60);
+  let s = totalSec - (h * 3600 + m * 60);
+  if (h < 10) h = "0" + h;
+  if (m < 10) m = "0" + m;
+  if (s < 10) s = "0" + s;
+  clock.textContent = `${h} : ${m} : ${s}`;
+  if (Math.floor(userHours * 3600) == totalSec) {
+    clearInterval(clearingVar);
+    clock.textContent = "Time's Up";
+  }
+}
+
 function trackH2O() {
   calculator = Number(0);
   calcStr = calculator.toString();
@@ -64,16 +83,11 @@ function trackH2O() {
   countingAvg.textContent = amountStr;
 }
 
-//add amountPerHour to calculator
 function addH2O() {
   amountPerHour = Number(amountPerHour);
-  calculator = Number(calculator)
+  calculator = Number(calculator);
   calculator += amountPerHour;
-  // if (calculator === Number(userAmount)) {
-  //   h2oBtn.disabled = true;
-  // }
   trackerAmount.textContent = calculator.toFixed(2).toString();
-  
 }
 
 firstBtn.addEventListener("click", firstConfirm);
@@ -82,6 +96,5 @@ h2oBtn.addEventListener("click", addH2O);
 document.addEventListener("keypress", function (e) {
   if (e.keyCode === 13) {
     e.preventDefault();
-    addMsg();
   }
 });

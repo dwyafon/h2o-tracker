@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background: url("https://source.unsplash.com/HtUBBdNDxpQ/1600x900") no-repeat
+    center center/cover;
+}
+
 body::before {
   content: "";
   position: absolute;
@@ -11,63 +21,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-body {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  font-family: "Montserrat", sans-serif;
-  color: #fff;
-  background: url("https://source.unsplash.com/kIPG5OyGbWk/1600x900") no-repeat
-    center center/cover;
-}
-
-.counting-bg {
-  background: url("https://source.unsplash.com/UuAs_sR4frs/1600x900") no-repeat
-    center center/cover;
-}
-
-#landing-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 600px;
-  margin: auto;
-  position: relative;
-}
-
-#counting-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 600px;
-  margin: auto;
-  position: relative;
-  padding: 50px;
-}
-
-.form-group {
-  margin-top: 20px;
-  padding: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 3px;
-}
-
-input {
-  width: 80%;
-  text-align: center;
-  outline: none;
-  border-radius: 5px;
-  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -90,6 +44,102 @@ a {
   color: yellowgreen;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  padding: 50px;
+}
+
+/* landing */
+
+#landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+/* counting */
+.counting-bg {
+  background: url("https://source.unsplash.com/kIPG5OyGbWk/1600x900") no-repeat
+    center center/cover;
+}
+
+#counting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  padding: 50px;
+}
+
+.counting-instructions {
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+#avgLitres, #totalHours, #countingAvg {
+  color: greenyellow;
+  }
+  
+  #trackerAmount {
+    display: block;
+    font-size: 100px;
+    color: greenyellow;
+  }
+  
+  #h2oBtnWrap {
+    margin: 30px;
+  }
+
+#clock {
+  margin: 20px;
+  border: 1px solid orangered;
+  padding: 30px;
+  color: greenyellow;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+/* forms */
+
+#all-forms-wrap, #amountWrap {
+  border: 1px solid #f5f5f5;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+input {
+  width: 80%;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  padding: 20px;
+}
+
 Button {
   cursor: pointer;
   background: none;
@@ -108,11 +158,11 @@ Button {
   border-radius: 10px;
 }
 
-.counting-instructions {
-  padding: 20px;
-  border: 1px solid #fff;
-  border-radius: 10px;
+#yesBtn, #noBtn  {
+  margin: 30px;
 }
+
+/* footer/navigation bar */
 
 .nav {
   display: flex;
@@ -126,38 +176,4 @@ Button {
   height: 80px;
   opacity: 0.5;
   text-align: center;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-}
-
-ul li {
-  padding: 50px;
-}
-
-#all-forms-wrap, #amountWrap {
-  border: 1px solid #f5f5f5;
-  padding: 20px;
-  margin-top: 50px;
-  border-radius: 5px;
-}
-
-#avgLitres, #totalHours, #countingAvg {
-color: greenyellow;
-}
-
-#yesBtn, #noBtn  {
-  margin: 30px;
-}
-
-#trackerAmount {
-  display: block;
-  font-size: 100px;
-  color: greenyellow;
-}
-
-#h2oBtnWrap {
-  margin: 30px;
 }
