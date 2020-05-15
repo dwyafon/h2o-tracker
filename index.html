@@ -12,87 +12,87 @@
     <title>H20 Tracker</title>
   </head>
   <body>
-    <div id="landing-container">
-      <h1>H20 Tracker</h1>
-      <h2>Stay hydrated and stay on schedule</h2>
-      <h3>
-        An app to help you set and track your water consumption, meet your
-        goals, and support your health
-      </h3>
-      <div id="all-forms-wrap">
-        <form id="first-form-wrap">
-          <div id="amount" class="form-group">
-            <label for="h2OAmount"
-              >Enter the total litres of water that you want to drink
-              today</label
-            >
-            <input
-              type="number"
-              name="h2oAmount"
-              id="h2oAmount"
-              min="1"
-              required
-            />
-          </div>
-          <div id="hours" class="form-group">
-            <label for="h2oHours"
-              >Over how many hours do you want to drink this amount?</label
-            >
-            <input
-              type="number"
-              name="h2oHours"
-              id="h2oHours"
-              min="1"
-              required
-            />
-          </div>
-          <button type="button" class="btn" id="first-submit">Submit</button>
-        </form>
-
-        <form id="second-form-wrap">
-          <p>
-            That's an average of <span id="avgLitres"></span> litre(s) every
-            hour, over <span id="totalHours"></span> hour(s). Is this correct?
-          </p>
-          <button type="button" class="yesBtn" id="yesBtn">Yes</button>
-          <button type="submit" class="noBtn" id="noBtn">No</button>
-        </form>
-
-        <form id="third-form-wrap">
-          <p class="">
-            By clicking the confirm button and using this app, you agree to our
-            <a href="#">Terms & Conditions</a> and confirm that you have read
-            official <a href="#">guidelines</a> for healthy water consumption
-            prior to the use of this app.
-          </p>
-          <button type="button" id="confirmBtn">Confirm</button>
-        </form>
-      </div>
-    </div>
-
-    <div id="counting-container">
-      <div id="counting-instructions">
-        <h2>The clock has started</h2>
-
-        <div id="clock"></div>
-
-        <p>Keep this page open in your browser</p>
-        <p>
-          Click the H2O button below each time you have finished drinking
-          <span id="countingAvg"></span> litre(s) of water
-        </p>
-      </div>
-      <div id="amountWrap">
-        <p>
-          You have consumed<span id="trackerAmount"></span> litre(s) of water so
-          far
-        </p>
-        <div id="h2oBtnWrap">
-          <button type="button" id="h2oBtn">H2O</button>
+    <div class="container">
+      <div id="landing-container">
+        <h1>H20 Tracker</h1>
+        <h2>Stay hydrated and stay on schedule</h2>
+        <h3>
+          An app to help you set and track your water consumption, meet your
+          goals, and support your health
+        </h3>
+        <div id="all-forms-wrap">
+          <form id="first-form-wrap">
+            <div id="amount" class="form-group">
+              <label for="h2OAmount"
+                >Enter the total litres of water that you want to drink
+                today</label
+              >
+              <input
+                type="number"
+                name="h2oAmount"
+                id="h2oAmount"
+                min="1"
+                placeholder="Enter total amount"
+                required
+              />
+            </div>
+            <div id="hours" class="form-group">
+              <label for="h2oHours"
+                >Over how many hours do you want to drink this amount?</label
+              >
+              <input
+                type="number"
+                name="h2oHours"
+                id="h2oHours"
+                min="1"
+                placeholder="Enter total hours"
+                required
+              />
+            </div>
+            <button type="button" class="btn" id="first-submit">Submit</button>
+          </form>
+  
+          <form id="second-form-wrap">
+            <p>
+              That's an average of <span id="avgLitres"></span> litre(s) every
+              hour, over <span id="totalHours"></span> hour(s). Is this correct?
+            </p>
+            <button type="button" class="yesBtn" id="yesBtn">Yes</button>
+            <button type="button" class="noBtn" id="noBtn">No</button>
+          </form>
+  
+          <form id="third-form-wrap">
+            <p class="">
+              By clicking the confirm button and using this app, you agree to our
+              <a href="#">Terms & Conditions</a> and confirm that you have read
+              official <a href="#">guidelines</a> for healthy water consumption
+              prior to the use of this app.
+            </p>
+            <button type="button" id="confirmBtn">Confirm</button>
+          </form>
         </div>
       </div>
-    </div>
-
+  
+      <div id="counting-container">
+        <div id="clock"></div>
+        <div id="counting-instructions">
+          <p>Keep this page open in your browser</p>
+          <p>
+            Click the H2O button below each time you have finished drinking
+            <span id="countingAvg"></span> litre(s) of water
+          </p>
+        </div>
+        <div id="amountWrap">
+          <p>
+            You have consumed <span id="trackerAmount"></span> litre(s) of water so
+            far
+          </p>
+          <div id="h2oBtnWrap">
+            <button type="button" id="h2oBtn">H2O</button>
+          </div>
+        </div>
+      </div>
+  
     <footer class="nav">
       <ul>
         <li><a href="#">Terms & Conditions</a></li>
@@ -101,5 +101,9 @@
         <li><a href="#">Other Resources</a></li>
       </ul>
     </footer>
+    </div>
+   
+
+   
   </body>
 </html>

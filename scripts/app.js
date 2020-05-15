@@ -36,11 +36,12 @@ thirdForm.style.display = "none";
 function returnToHome() {
   secondForm.style.display = "none";
   firstForm.style.display = "block";
+  h2oAmount.focus();
+  h2oAmount.value = "";
+  h2oHours.value = "";
 }
 
 function firstConfirm() {
-  userAmount = Number(h2oAmount.value);
-  userHours = Number(h2oHours.value);
   amountPerHour = userAmount / userHours;
   amountPerHour = amountPerHour.toFixed(2);
   amountStr = amountPerHour.toString();
@@ -50,7 +51,7 @@ function firstConfirm() {
   avgLitres.textContent = amountPerHour;
   totalHours.textContent = hoursStr;
   yesBtn.addEventListener("click", changeBG);
-  // noBtn.addEventListener("click", returnToHome);
+  noBtn.addEventListener("click", returnToHome);
 }
 
 function changeBG() {
@@ -90,7 +91,19 @@ function addH2O() {
   trackerAmount.textContent = calculator.toFixed(2).toString();
 }
 
-firstBtn.addEventListener("click", firstConfirm);
+firstBtn.addEventListener("click", function () {
+  userAmount = Number(h2oAmount.value);
+  userHours = Number(h2oHours.value);
+  if (userAmount <= 0 || userHours <= 0) {
+    returnToHome();
+    h2oAmount.focus();
+    h2oAmount.value = "";
+    h2oHours.value = "";
+  } else {
+    firstConfirm();
+  }
+});
+
 h2oBtn.addEventListener("click", addH2O);
 
 document.addEventListener("keypress", function (e) {
