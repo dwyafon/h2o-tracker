@@ -299,11 +299,12 @@ ul li {
     max-width: 750px;
     margin: auto;
     position: relative;
+
   }
   #all-forms-wrap {
     border: none;
     margin-top: 1px;
-    flex: 20 0 2%;
+    flex-shrink: 0;
   }
 
   .form-group {
@@ -395,7 +396,7 @@ ul li {
     margin-top: 50px;
     color: #fff;
     bottom: 0;
-    position: fixed;
+    position: relative;
     text-align: center;
     background-color: rgba(0, 0, 0, 0);
   }
